@@ -1,0 +1,53 @@
+{
+  "name": "gulp_yh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.19.0",
+    "npm": ">=10.2.3"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "prod": "gulp build --env=production",
+    "fix:eslint": "eslint src/**/*.{ts,tsx} --fix --config .eslintrc.json"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie 10",
+    "last 2 versions"
+  ],
+  "keywords": [],
+  "author": "Yaroslav Honchar",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "autoprefixer": "^10.4.16",
+    "browser-sync": "^2.29.3",
+    "cssnano": "^6.0.2",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if-env": "^1.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-twig": "^1.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^15.0.1",
+    "postcss": "^8.4.32",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-short": "^5.0.0",
+    "postcss-sort-media-queries": "^5.2.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-twig-melody": "^0.4.6",
+    "sass": "^1.69.5"
+  }
+}
