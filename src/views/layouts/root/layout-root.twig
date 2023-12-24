@@ -1,0 +1,21 @@
+{% import "ui/links.twig" as link %}
+
+{% block variables %}{% endblock %}
+
+<!doctype html>
+<html lang="en">
+{% include "layouts/components/head.twig" %}
+<body>
+<div class="layout {{ page_class }}">
+  {% include "layouts/components/header.twig" %}
+
+  <main class="layout-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "layouts/components/footer.twig" %}
+</div>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "printWidth": 100,
+  "singleQuote": false,
+  "semi": false,
+  "tabWidth": 2,
+  "twigTabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+  "plugins": ["./node_modules/prettier-plugin-twig-melody"],
+  "twigPrintWidth": 120,
+  "overrides": [
+    {
+      "files": ["*.twig"],
+      "options": {
+        "printWidth": 120,
+        "singleQuote": false,
+        "tabWidth": 2
+      }
+    }
+  ]
+}

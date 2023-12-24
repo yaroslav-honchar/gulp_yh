@@ -1,0 +1,11 @@
+{% set navigation = data("navigation") %}
+
+<header class="header">
+  <ul>
+    {% for item in navigation %}
+      <li>
+        {{ link.primary(item) }}
+      </li>
+    {% endfor %}
+  </ul>
+</header>

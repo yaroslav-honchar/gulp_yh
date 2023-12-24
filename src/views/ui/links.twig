@@ -1,0 +1,8 @@
+{% macro primary(props) %}
+  <a
+    href="{{ props.href is defined ? props.href : "#" }}"
+    aria-label="{{ props.title | striptags }}"
+  >
+    {{ props.title }}
+  </a>
+{% endmacro %}
