@@ -52,6 +52,8 @@
     "eslint-plugin-import": "^2.29.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-changed": "^5.0.2",
+    "gulp-cheerio": "^1.0.0",
     "gulp-flatten": "^0.4.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if-env": "^1.0.0",
@@ -59,6 +61,8 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^2.0.3",
+    "gulp-svgmin": "^4.1.0",
     "gulp-ttf-svg": "^1.0.1",
     "gulp-ttf2eot": "^1.1.2",
     "gulp-ttf2woff": "^1.1.1",
@@ -74,13 +78,13 @@
     "prettier-plugin-twig-melody": "^0.4.6",
     "rollup": "^4.9.1",
     "sass": "^1.69.5",
-    "ttf2eot": "^3.1.0",
-    "ttf2svg": "^1.2.0",
-    "ttf2woff": "^3.0.0",
-    "ttf2woff2": "^5.0.0",
     "stylelint": "^15.10.3",
     "stylelint-config-recess-order": "^4.3.0",
     "stylelint-config-standard": "^33.0.0",
-    "stylelint-config-standard-scss": "^11.0.0"
+    "stylelint-config-standard-scss": "^11.0.0",
+    "ttf2eot": "^3.1.0",
+    "ttf2svg": "^1.2.0",
+    "ttf2woff": "^3.0.0",
+    "ttf2woff2": "^5.0.0"
   }
 }

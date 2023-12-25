@@ -1,0 +1,100 @@
+{# Icons #}
+{% macro icon(name, mod) %}
+  <svg class="icon icon-{{ name }} {{ mod }}">
+    <use href="./icon/icons/icons.svg#{{ name }}" />
+  </svg>
+{% endmacro %}
+{# Icons end #}
+
+{# Images #}
+{% macro img(link, format, parent, width, height) %}
+  <picture class="{{ parent }}__image">
+    <source srcset="./img/{{ link }}.webp" type="image/webp" class="{{ parent }}__img" />
+    <img src="./img/{{ link }}.{{ format }}" alt="img" class="{{ parent }}__img" width="{{ width }}"
+         height="{{ height }}" />
+  </picture>
+{% endmacro %}
+{# Images end #}
+
+{# Videos #}
+{#
+@params: {
+  sources: [
+    {
+      src: string,
+      type: string
+    }
+  ],
+  width: number,
+  height: number,
+
+  id?: string,
+  class?: string,
+  poster?: string,
+  attr?: string
+}
+#}
+{% macro video(params) %}
+  <video
+    id="{{ params.id }}"
+    class="{{ params.class }}"
+    src="{{ params.src }}.{{ params.format }}"
+    width="{{ params.width }}"
+    height="{{ params.height }}"
+    poster="{{ params.poster ? './img/' ~ params.poster : '' }}"
+
+    {{ params.attr }}
+  >
+    {% for item in params.sources %}
+      <source
+        src="./video/{{ item.src }}"
+        type="video/{{ item.type }}"
+      >
+    {% endfor %}
+    Your browser doesn't support HTML5 video tag.
+  </video>
+{% endmacro %}
+{# Videos end #}
+
+{# Videos for background #}
+{#
+@params: {
+  sources: [
+    {
+      src: string,
+      type: string,
+      mw: string,
+    }
+  ],
+  width: number,
+  height: number,
+  id: string,
+
+  class?: string,
+  poster?: string,
+  attr?: string
+}
+#}
+{% macro videoBg(params) %}
+  <video
+    id="{{ params.id }}"
+    class="{{ params.class }} js-responce-video"
+    src="{{ params.src }}.{{ params.format }}"
+    width="{{ params.width }}"
+    height="{{ params.height }}"
+    poster="{{ params.poster ? './img/' ~ params.poster : '' }}"
+    autoplay
+    loop
+    muted
+    playsinline
+  >
+    {% for item in params.sources %}
+      <source
+        data-src="./video/{{ item.src }}"
+        data-mw="{{ item.mw }}"
+        type="video/{{ item.type }}"
+      >
+    {% endfor %}
+  </video>
+{% endmacro %}
+{# Videos for background end #}

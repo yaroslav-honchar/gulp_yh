@@ -23,7 +23,7 @@ gulp.task("styles", async () => {
     .pipe(sassCompiler({
       includePaths: ["node_modules"],
       errLogToConsole: true,
-      outputStyle: process.isProd && "compressed",
+      ...(process.isProd ? { outputStyle: "compressed" } : {}),
     }))
     .pipe(postcss(process.isDev && [autoprefixer()]))
     .pipe(

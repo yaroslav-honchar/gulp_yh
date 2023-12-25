@@ -9,5 +9,8 @@ gulp.task("watch", () => {
 
   watch("./src/js/**/*.js", gulp.series("script"))
 
-  watch("./src/assets/fonts/*.**", gulp.series("fonts:copy"))
+  watch("./src/assets/fonts/*.*", gulp.series("fonts:copy"))
+
+  watch("./src/assets/icons/*.svg", gulp.series("svg:icons"))
+  watch("./src/assets/svg/*.svg", gulp.series("svg:pictures"))
 })
