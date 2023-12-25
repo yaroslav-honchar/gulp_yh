@@ -32,9 +32,9 @@ class LodashLocal {
    * @return { function }
    * */
   throttle(func, ms) {
-    let isThrottled = false,
-      savedArgs,
-      savedThis
+    let isThrottled = false
+    let savedArgs
+    let savedThis
 
     function wrapper() {
       if (isThrottled) {
@@ -47,7 +47,7 @@ class LodashLocal {
 
       isThrottled = true
 
-      setTimeout(function() {
+      setTimeout(() => {
         isThrottled = false
         if (savedArgs) {
           wrapper.apply(savedThis, savedArgs)

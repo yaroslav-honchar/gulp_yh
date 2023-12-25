@@ -1,8 +1,8 @@
 const slideUp = (target, duration = 500, callback) => {
   target.style.transitionProperty = "height, margin, padding"
-  target.style.transitionDuration = duration + "ms"
+  target.style.transitionDuration = `${duration  }ms`
   target.style.boxSizing = "border-box"
-  target.style.height = target.offsetHeight + "px"
+  target.style.height = `${target.offsetHeight  }px`
   target.offsetHeight
   target.style.overflow = "hidden"
   target.style.height = "0"
@@ -43,8 +43,8 @@ const slideDown = (target, duration = 500, callback) => {
   target.offsetHeight
   target.style.boxSizing = "border-box"
   target.style.transitionProperty = "height, margin, padding"
-  target.style.transitionDuration = duration + "ms"
-  target.style.height = height + "px"
+  target.style.transitionDuration = `${duration  }ms`
+  target.style.height = `${height  }px`
   target.style.removeProperty("padding-top")
   target.style.removeProperty("padding-bottom")
   target.style.removeProperty("margin-top")
@@ -63,9 +63,9 @@ const slideDown = (target, duration = 500, callback) => {
 const slideToggle = (target, duration = 500, callback) => {
   if (window.getComputedStyle(target).display === "none") {
     return slideDown(target, duration, callback)
-  } else {
-    return slideUp(target, duration, callback)
-  }
+  } 
+  return slideUp(target, duration, callback)
+  
 }
 
 export { slideUp, slideDown, slideToggle }

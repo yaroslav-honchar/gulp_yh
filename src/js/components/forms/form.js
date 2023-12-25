@@ -1,4 +1,4 @@
-import { defaultFormOptions } from "./options/"
+import { defaultFormOptions } from "./options"
 import { getFieldType } from "./lib"
 
 export class Form {

@@ -42,7 +42,7 @@ export class VideoResponser {
    */
   responseVideo(options) {
     const { selector, breakpoints } = options // get options
-    let $video = document.querySelector(selector)
+    const $video = document.querySelector(selector)
     const widthNow = $video.getAttribute("data-width-now") || null
     const maxBreakpoint = Math.max.apply(
       Math,
@@ -59,13 +59,13 @@ export class VideoResponser {
       $video.innerHTML = ""
 
       if (breakpoints[nowBreakpoint].webm) {
-        $video.innerHTML += "<source src=\"" + breakpoints[nowBreakpoint].webm + "\" type=\"video/webm\">"
+        $video.innerHTML += `<source src="${  breakpoints[nowBreakpoint].webm  }" type="video/webm">`
       }
       if (breakpoints[nowBreakpoint].mp4) {
-        $video.innerHTML += "<source src=\"" + breakpoints[nowBreakpoint].mp4 + "\" type=\"video/mp4\">"
+        $video.innerHTML += `<source src="${  breakpoints[nowBreakpoint].mp4  }" type="video/mp4">`
       }
       if (breakpoints[nowBreakpoint].mov) {
-        $video.innerHTML += "<source src=\"" + breakpoints[nowBreakpoint].mov + "\" type=\"video/mp4\">"
+        $video.innerHTML += `<source src="${  breakpoints[nowBreakpoint].mov  }" type="video/mp4">`
       }
     } else {
       $video.innerHTML = ""

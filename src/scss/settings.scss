@@ -24,6 +24,7 @@ html {
 
 body {
   padding-right: var(--current-scrollbar-width);
+
   background-color: var(--bg-primary);
 
   &._lock {
@@ -143,13 +144,4 @@ fieldset {
   padding-right: 15px;
   padding-left: 15px;
   margin: 0 auto;
-}
-
-.container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.important_none {
-  display: none ;
 }
