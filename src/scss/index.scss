@@ -1,5 +1,29 @@
-// Css variables
-@import "variables";
+//  Libs
+@import 'libs';
 
-// Normalize default styles
-@import "settings";
+//  Utils
+@import 'utils/index';
+
+//  Fonts
+@import 'fonts';
+
+//  Custom mixins
+@import 'vars/index';
+
+//  Root
+@import 'root';
+
+//  Settings
+@import 'settings';
+
+//  UI
+@import 'ui/main';
+
+//  Components
+@import 'components/main';
+
+//  Modules
+@import 'modules/main';
+
+//  Helpers
+@import 'helpers/main';

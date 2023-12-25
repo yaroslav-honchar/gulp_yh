@@ -6,7 +6,7 @@ import htmlmin from "gulp-htmlmin"
 import flatten from "gulp-flatten"
 import plumber from "gulp-plumber"
 
-export default gulp.task("twig", () => {
+gulp.task("twig", () => {
   return gulp.src("./src/views/**/{*.page,index}.twig")
     .pipe(
       process.ifDev(

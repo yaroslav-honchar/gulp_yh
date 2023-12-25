@@ -6,7 +6,7 @@ import plumber from "gulp-plumber"
 import postcss from "gulp-postcss"
 import autoprefixer from "autoprefixer"
 
-export default gulp.task("styles", async () => {
+gulp.task("styles", async () => {
   const sassCompiler = gulpSass(sass)
 
   return gulp.src("./src/scss/index.scss")

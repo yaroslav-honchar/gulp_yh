@@ -47,6 +47,10 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-ttf-svg": "^1.0.1",
+    "gulp-ttf2eot": "^1.1.2",
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^4.0.1",
     "gulp-twig": "^1.2.0",
     "husky": "^4.3.8",
     "lint-staged": "^15.0.1",
@@ -57,6 +61,10 @@
     "prettier": "^3.1.1",
     "prettier-plugin-twig-melody": "^0.4.6",
     "rollup": "^4.9.1",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "ttf2eot": "^3.1.0",
+    "ttf2svg": "^1.2.0",
+    "ttf2woff": "^3.0.0",
+    "ttf2woff2": "^5.0.0"
   }
 }
