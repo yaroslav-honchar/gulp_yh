@@ -4,6 +4,6 @@ import "./gulp/tasks/index.js"
 
 setGlobalVariables(import.meta.url)
 
-gulp.task("build", gulp.series("twig", "styles"))
+gulp.task("build", gulp.series("clean", gulp.parallel("twig", "styles", "script")))
 
 gulp.task("default", gulp.series("build", gulp.parallel("watch", "server")))

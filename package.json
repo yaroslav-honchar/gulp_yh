@@ -23,11 +23,16 @@
   "author": "Yaroslav Honchar",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.23.6",
     "@babel/preset-env": "^7.23.6",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-multi-entry": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "autoprefixer": "^10.4.16",
     "browser-sync": "^2.29.3",
     "cssnano": "^6.0.2",
+    "del": "^6.0.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "gulp": "^4.0.2",
@@ -48,6 +53,7 @@
     "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.1.1",
     "prettier-plugin-twig-melody": "^0.4.6",
+    "rollup": "^4.9.1",
     "sass": "^1.69.5"
   }
 }

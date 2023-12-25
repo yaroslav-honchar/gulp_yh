@@ -15,13 +15,22 @@ export default gulp.task("styles", async () => {
         plumber(),
       ),
     )
-    .pipe(sourcemaps.init())
+    .pipe(
+      process.ifDev(
+        sourcemaps.init(),
+      ),
+    )
     .pipe(sassCompiler({
       includePaths: ["node_modules"],
       errLogToConsole: true,
+      outputStyle: process.isProd && "compressed",
     }))
     .pipe(postcss(process.isDev && [autoprefixer()]))
-    .pipe(sourcemaps.write("../maps"))
+    .pipe(
+      process.ifDev(
+        sourcemaps.write("../maps"),
+      ),
+    )
     .pipe(gulp.dest((file) => {
       file.path = file.path.replace(/index\.css/, "styles.css")
 

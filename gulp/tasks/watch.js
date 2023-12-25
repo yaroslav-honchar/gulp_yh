@@ -1,6 +1,9 @@
 import gulp from "gulp"
 
 export default gulp.task("watch", () => {
-  gulp.watch("./src/views/**/*.{json,twig}", gulp.series("twig"))
-  gulp.watch("./src/scss/**/*.scss", gulp.series("styles"))
+  const { watch } = gulp
+
+  watch("./src/views/**/*.{json,twig}", gulp.series("twig"))
+  watch("./src/scss/**/*.scss", gulp.series("styles"))
+  watch("./src/js/**/*.js", gulp.series("script"))
 })
