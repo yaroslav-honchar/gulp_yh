@@ -11,6 +11,9 @@ gulp.task("watch", () => {
 
   watch("./src/assets/fonts/*.*", gulp.series("fonts:copy"))
 
+  watch("./src/pwa/service-worker.js", gulp.series("pwa:sw"))
+
   watch("./src/assets/icons/*.svg", gulp.series("svg:icons"))
   watch("./src/assets/svg/*.svg", gulp.series("svg:pictures"))
+
 })

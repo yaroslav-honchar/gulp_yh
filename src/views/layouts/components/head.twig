@@ -1,4 +1,4 @@
-<head>
+<head prefix="my_namespace: https://no-url.com/">
   <meta charset="UTF-8">
   <meta
     name="viewport"
@@ -9,5 +9,33 @@
     content="ie=edge"
   >
   <title>Y.H | {{ title }}</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./favicons/favicon.ico" type="image/x-icon" sizes="16x16">
+  <link rel="icon" href="./favicons/favicon-48x48.png" type="image/png" sizes="32x32">
   <link rel="stylesheet" href="./css/styles.css">
+
+  <meta property="og:site_name" content="{{ title }}">
+  <meta
+    property="og:title"
+    content="{{ title }}"
+  />
+  <meta
+    property="og:description"
+    content="Description"
+  />
+  <meta property="og:locale" content="en">
+  <meta property="og:locale:alternate" content="uk" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://no-url.com/" />
+  <meta property="og:image" content="https://no-url.com/favicons/favicon-48x48.png" />
+  <meta property="og:image:width" content="48" />
+  <meta property="og:image:height" content="48" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@no-url" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="width" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="keywords" content="{{ title }}" />
+  <meta name="description" content="{{ title }}" />
+  <meta name="theme-color" content="#ffffff">
 </head>

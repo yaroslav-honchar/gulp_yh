@@ -16,7 +16,25 @@
 
   {% include "layouts/components/footer.twig" %}
 </div>
-<script src="./js/main.min.js"></script>
+
+<script>
+  if (navigator.serviceWorker) {
+    window.addEventListener("load", () => {
+      navigator
+        .serviceWorker
+        .register("./service-worker.js")
+        .then(
+          registration => {
+            console.log("[SW]: Registration successful: ", registration)
+          },
+          error => {
+            console.warn(`[SW]: Registration failed: ${error}`)
+          },
+        )
+    })
+  }
+</script>
+<script src="./js/main.js"></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

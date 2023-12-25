@@ -54,6 +54,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-changed": "^5.0.2",
     "gulp-cheerio": "^1.0.0",
+    "gulp-favicons": "^4.0.1",
     "gulp-flatten": "^0.4.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if-env": "^1.0.0",
@@ -85,6 +86,8 @@
     "ttf2eot": "^3.1.0",
     "ttf2svg": "^1.2.0",
     "ttf2woff": "^3.0.0",
-    "ttf2woff2": "^5.0.0"
+    "ttf2woff2": "^5.0.0",
+    "xml2js": "^0.6.2",
+    "xmlbuilder": "^15.1.1"
   }
 }
