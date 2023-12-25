@@ -4,14 +4,17 @@ import "./gulp/tasks/index.js"
 
 setGlobalVariables(import.meta.url)
 
-gulp.task("build", gulp.series("clean",
-    gulp.parallel(
+const { task, series, parallel } = gulp
+
+task("build", series("clean",
+    parallel(
       "twig",
       "styles",
       "script",
       "fonts:copy",
       "svg:icons",
       "svg:pictures",
+      "media:images",
       "pwa:favicons",
       "pwa:sw",
       "pwa:robots",
@@ -20,4 +23,4 @@ gulp.task("build", gulp.series("clean",
   ),
 )
 
-gulp.task("default", gulp.series("build", gulp.parallel("watch", "server")))
+task("default", series("build", parallel("watch", "server")))
