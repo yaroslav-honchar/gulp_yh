@@ -7,6 +7,16 @@ gulp.task("pwa:sw", () => {
     .pipe(gulp.dest("./build"))
 })
 
+gulp.task("pwa:robots", () => {
+  return gulp.src("./src/pwa/robots.txt")
+    .pipe(gulp.dest("./build"))
+})
+
+gulp.task("pwa:sitemap", () => {
+  return gulp.src("./src/pwa/sitemap.xml")
+    .pipe(gulp.dest("./build"))
+})
+
 gulp.task("pwa:favicons", () => {
   return gulp.src("./src/pwa/favicon.png")
     .pipe(
