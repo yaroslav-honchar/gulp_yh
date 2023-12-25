@@ -1,0 +1,67 @@
+.dev-menu {
+    width: 15rem;
+    max-height: 60dvh;
+    position: fixed;
+    padding: .75rem;
+    top: 1rem;
+    left: 1rem;
+    transform: translate(calc(-100% - 2rem));
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0 0 1rem rgba(0 0 0 / 25%);
+    border-radius: 1rem;
+    transition: all .5s ease;
+}
+
+.dev-menu._open {
+    transform: translate(0);
+}
+
+.dev-menu-btn {
+    --dev-menu-btn-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--dev-menu-btn-size);
+    height: var(--dev-menu-btn-size);
+    position: absolute;
+    top: .75rem;
+    left: calc(100% + 1.75rem);
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem rgba(0 0 0 / 25%);
+    opacity: .75;
+    transition: all .5s ease;
+}
+
+.dev-menu-btn:hover {
+    opacity: 1;
+    background-color: black;
+}
+
+.dev-menu._open .dev-menu-btn {
+    opacity: 1;
+    left: calc(100% - var(--dev-menu-btn-size) - .75rem);
+}
+
+
+.dev-menu-btn svg {
+    display: block;
+    width: calc(var(--dev-menu-btn-size) / 1.5);
+    height: calc(var(--dev-menu-btn-size) / 1.5);
+    stroke: black;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all .5s ease;
+}
+
+.dev-menu-btn:hover svg {
+    stroke: white;
+}
+
+.dev-menu-list {
+    padding: .75rem;
+    min-height: fit-content;
+    overflow-y: auto;
+}

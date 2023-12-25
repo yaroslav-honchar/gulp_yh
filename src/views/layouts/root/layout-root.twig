@@ -17,6 +17,10 @@
   {% include "layouts/components/footer.twig" %}
 </div>
 
+{% if is_dev %}
+  {% include "_dev-menu/dev-menu.twig" %}
+{% endif %}
+
 <script>
   if (navigator.serviceWorker) {
     window.addEventListener("load", () => {

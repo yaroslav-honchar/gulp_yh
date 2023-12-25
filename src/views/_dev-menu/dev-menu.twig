@@ -1,0 +1,38 @@
+{% set data = dev_menu() %}
+
+<div class="dev-menu">
+  <button
+    class="dev-menu-btn"
+    aria-label="Developer menu"
+    type="button"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M7 8L3 12L7 16" />
+      <path d="M17 8L21 12L17 16" />
+      <path d="M14 4L9.8589 19.4548" />
+    </svg>
+  </button>
+
+  <ul class="dev-menu-list">
+    {% for index, link in data %}
+      <li class="dev-menu-item">
+        <a
+          href="{{ link.href }}"
+          class="dev-menu-link {{ current_page == link.id ? "_active" : "" }}"
+        >
+          {{ index + 1 }}. {{ link.title | capitalize }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+<style>
+  {% include "./dev-menu.css" %}
+</style>
+<script>
+  {% include "./dev-menu.js" %}
+</script>
