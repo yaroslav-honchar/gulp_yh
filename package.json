@@ -12,7 +12,7 @@
     "start": "gulp",
     "build": "gulp build",
     "prod": "gulp build --env=production",
-    "fix:eslint": "eslint src/**/*.{ts,tsx} --fix --config .eslintrc.json"
+    "fix:eslint": "eslint src/**/*.js --fix --config .eslintrc.json"
   },
   "browserslist": [
     "> 1%",
@@ -23,6 +23,7 @@
   "author": "Yaroslav Honchar",
   "license": "ISC",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.3",
     "@babel/preset-env": "^7.23.6",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -35,6 +36,8 @@
     "del": "^6.0.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-flatten": "^0.4.0",
