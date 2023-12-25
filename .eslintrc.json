@@ -8,6 +8,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "airbnb",
     "prettier"
   ],
   "overrides": [
@@ -15,7 +16,6 @@
       "files": [
         "src/**/*.js"
       ],
-
       "rules": {
         "no-unused-vars": "warn",
         "no-dupe-keys": "warn",
