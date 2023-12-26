@@ -1,6 +1,7 @@
 import gulp from "gulp"
 import favicons from "gulp-favicons"
 import { parseString, Builder } from "xml2js"
+import sitemap from "gulp-sitemap"
 
 gulp.task("pwa:sw", () => {
   return gulp.src("./src/pwa/service-worker.js")
@@ -13,7 +14,10 @@ gulp.task("pwa:robots", () => {
 })
 
 gulp.task("pwa:sitemap", () => {
-  return gulp.src("./src/pwa/sitemap.xml")
+  return gulp.src("./build/*.html")
+    .pipe(sitemap({
+      siteUrl: 'http://www.no-url.com'
+    }))
     .pipe(gulp.dest("./build"))
 })
 

@@ -16,19 +16,33 @@
       <path d="M14 4L9.8589 19.4548" />
     </svg>
   </button>
+  <div class="dev-menu-list-wrap">
+    <ul class="dev-menu-list">
+      {% for index, link in data %}
+        <li class="dev-menu-item">
+          <a
+            href="{{ link.href }}"
+            class="dev-menu-link {{ current_page == link.id ? "_active" : "" }}"
+            aria-label="{{ "index" != link.id ? link.title : "home" }}"
+          >
+            {{ index + 1 }}. {{ ("index" != link.id ? link.title : "home") | capitalize }}
+          </a>
+        </li>
+      {% endfor %}
 
-  <ul class="dev-menu-list">
-    {% for index, link in data %}
       <li class="dev-menu-item">
         <a
-          href="{{ link.href }}"
-          class="dev-menu-link {{ current_page == link.id ? "_active" : "" }}"
+          href="./icon/stack/sprite.stack.html"
+          class="dev-menu-link"
+          aria-label="SVG Sprite"
+          target="_blank"
         >
-          {{ index + 1 }}. {{ link.title | capitalize }}
+          {{ data.length + 1 }}. SVG Sprite
         </a>
       </li>
-    {% endfor %}
-  </ul>
+
+    </ul>
+  </div>
 </div>
 <style>
   {% include "./dev-menu.css" %}

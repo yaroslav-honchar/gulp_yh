@@ -1,6 +1,8 @@
 .dev-menu {
+    display: flex;
+    flex-direction: column;
     width: 15rem;
-    max-height: 60dvh;
+    max-height: 75dvh;
     position: fixed;
     padding: .75rem;
     top: 1rem;
@@ -60,8 +62,36 @@
     stroke: white;
 }
 
-.dev-menu-list {
+.dev-menu-list-wrap {
     padding: .75rem;
-    min-height: fit-content;
+    max-height: 100%;
     overflow-y: auto;
+}
+
+.dev-menu-list-wrap::-webkit-scrollbar {
+    width: .35rem;
+    height: .35rem;
+}
+
+.dev-menu-list-wrap::-webkit-scrollbar-track {
+    background-color: rgba(175, 175, 175, 0.25);
+    border-radius: .35rem;
+}
+
+.dev-menu-list-wrap::-webkit-scrollbar-thumb {
+    background-color: rgba(175, 175, 175, 0.5);
+    border-radius: .35rem;
+}
+
+.dev-menu-list {
+    min-height: fit-content;
+}
+
+.dev-menu-link {
+    transition: all .4s ease;
+}
+
+.dev-menu-link:hover,
+.dev-menu-link._active {
+    color: #3EB489;
 }

@@ -17,9 +17,9 @@ task("build", series("clean",
       "media:images",
       "pwa:favicons",
       "pwa:sw",
-      "pwa:robots",
-      "pwa:sitemap",
     ),
+    "pwa:robots",
+    "pwa:sitemap",
   ),
 )
 
