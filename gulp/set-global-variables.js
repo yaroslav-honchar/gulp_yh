@@ -22,6 +22,12 @@ export const setGlobalVariables = (indexFileUrl) => {
   process.__server = browserSync.create()
 
   /**
+   * Configure using styles preprocessor
+   * @type { "scss" | "tailwind" }
+   * */
+  process.stylesPreprocessor = "tailwind"
+
+  /**
    * Property contains boolean value of development mode
    * @type {boolean}
    * */

@@ -9,7 +9,7 @@ const { task, series, parallel } = gulp
 task("build", series("clean",
     parallel(
       "twig",
-      "styles",
+      `styles:${process.stylesPreprocessor}`,
       "script",
       "fonts:copy",
       "svg:icons",

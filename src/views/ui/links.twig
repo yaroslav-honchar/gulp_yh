@@ -1,5 +1,6 @@
 {% macro primary(props) %}
   <a
+    class="link link-primary"
     href="{{ props.href is defined ? props.href : "#" }}"
     aria-label="{{ props.title | striptags }}"
   >

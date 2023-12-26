@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    .link {
+        @apply p-2 m-2;
+    }
+}

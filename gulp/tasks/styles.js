@@ -5,11 +5,30 @@ import sourcemaps from "gulp-sourcemaps"
 import plumber from "gulp-plumber"
 import postcss from "gulp-postcss"
 import autoprefixer from "autoprefixer"
+import tailwindcss from "tailwindcss"
 
-gulp.task("styles", async () => {
+gulp.task("styles:tailwind", async () => {
+  return gulp.src("./src/styles/css/index.css")
+    .pipe(
+      process.ifDev(
+        plumber(),
+      ),
+    )
+    .pipe(postcss([
+      tailwindcss("tailwind.config.js"),
+      autoprefixer(),
+    ]))
+    .pipe(gulp.dest((file) => {
+      file.path = file.path.replace(/index\.css/, "styles.css")
+
+      return "./build/css/"
+    }));
+})
+
+gulp.task("styles:scss", async () => {
   const sassCompiler = gulpSass(sass)
 
-  return gulp.src("./src/scss/index.scss")
+  return gulp.src("./src/styles/scss/index.scss")
     .pipe(
       process.ifDev(
         plumber(),
@@ -44,4 +63,3 @@ gulp.task("styles", async () => {
       ),
     )
 })
-
