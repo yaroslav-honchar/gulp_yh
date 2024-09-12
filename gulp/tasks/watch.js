@@ -10,7 +10,13 @@ gulp.task("watch", () => {
     ],
     gulp.series("twig"),
   )
-  watch("./src/scss/**/*.scss", gulp.series("styles"))
+
+  if (process.stylesPreprocessor === "scss") {
+    watch("./src/styles/scss/**/*.scss", gulp.series("styles:scss"))
+  } else if(process.stylesPreprocessor === "tailwind") {
+    watch("./src/styles/tailwind/**/*.css", gulp.series("styles:tailwind"))
+  }
+
   watch("./src/js/**/*.js", gulp.series("script"))
   watch("./src/assets/fonts/*.*", gulp.series("fonts:copy"))
   watch("./src/assets/icons/*.svg", gulp.series("svg:icons"))

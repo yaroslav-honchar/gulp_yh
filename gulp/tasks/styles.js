@@ -8,7 +8,7 @@ import autoprefixer from "autoprefixer"
 import tailwindcss from "tailwindcss"
 
 gulp.task("styles:tailwind", async () => {
-  return gulp.src("./src/styles/css/index.css")
+  return gulp.src("./src/styles/tailwind/index.css")
     .pipe(
       process.ifDev(
         plumber(),
@@ -22,7 +22,14 @@ gulp.task("styles:tailwind", async () => {
       file.path = file.path.replace(/index\.css/, "styles.css")
 
       return "./build/css/"
-    }));
+    }))
+    .pipe(
+      process.ifDev(
+        process.__server.reload({
+          stream: true,
+        }),
+      ),
+    )
 })
 
 gulp.task("styles:scss", async () => {

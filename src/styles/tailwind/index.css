@@ -1,0 +1,25 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+    .layout {
+        @apply flex flex-col min-h-screen;
+    }
+
+    .header {
+        @apply bg-gray-800 text-white;
+    }
+
+    .header > ul {
+        @apply flex gap-2;
+    }
+
+    .layout-content {
+        @apply flex-1;
+    }
+
+    .footer {
+        @apply bg-gray-800 text-white;
+    }
+}
