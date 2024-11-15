@@ -10,20 +10,69 @@
   }
 }
 
-@mixin media-down($value) {
-  @media screen and (max-width: $value + 'px') {
+$breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px
+);
+
+// @include media-down(md) {
+//   background-color: green;
+// }
+// @include media-down(800) {
+//   background-color: green;
+// }
+
+@mixin media-down($val) {
+  $newVal: if(type-of($val) == "number", $val, map-get($breakpoints, $val));
+  @if($newVal == null) {
+    @error "[media-down] Please provide a valid value";
+  }
+
+  @media screen and (max-width: $newVal - 0.1px) {
     @content;
   }
 }
 
-@mixin media-up($value) {
-  @media screen and (min-width: $value + 'px') {
+// @include media-up(lg) {
+//   background-color: yellow;
+// }
+// @include media-up(900) {
+//   background-color: yellow;
+// }
+
+@mixin media-up($val) {
+  $newVal: if(type-of($val) == "number", $val * 1px, map-get($breakpoints, $val));
+  @if($newVal == null) {
+    @error "[media-up] Please provide a valid value";
+  }
+
+  @media screen and (min-width: $newVal) {
     @content;
   }
 }
 
-@mixin media-between($value1, $value2) {
-  @media screen and (min-width: $value1 + 'px') and (max-width: $value2 + 'px') {
+// @include media-between(md, lg) {
+//   background-color: red;
+// }
+// @include media-between(800, 900) {
+//   background-color: red;
+// }
+
+@mixin media-between($minVal, $maxVal) {
+  $newMinVal: if(type-of($minVal) == "number", $minVal * 1px, map-get($breakpoints, $minVal));
+  $newMaxVal: if(type-of($maxVal) == "number", $maxVal, map-get($breakpoints, $maxVal));
+  @if($newMaxVal == null) {
+    @error "[media-between] Please provide a valid max value";
+  }
+  @if($newMinVal == null) {
+    @error "[media-between] Please provide a valid min value";
+  }
+
+  @media (min-width: $newMinVal) and (max-width: $newMaxVal - 0.1px) {
     @content;
   }
 }
